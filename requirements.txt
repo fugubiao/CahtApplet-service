@@ -1,3 +1,15 @@
+transformers>=4.45.2,<4.38.0
+torch
+accelerate
+tiktoken
+einops
+transformers_stream_generator==0.0.4
+scipy
+regex!=2019.12.17
+FlashAttention #用于导入 flash_attn ，请安装 FlashAttention 以提高效率 https://github.com/Dao-AILab/flash-attention
+numpy
+opencc
+torchvision
 pathlib #用于管理文件路径
 pyjwt #产生访问令牌
 flask_jwt_extended #

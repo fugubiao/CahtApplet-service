@@ -223,66 +223,6 @@ def echo_socket(ws):
 
 
 
-'''
-#问答
-
-
-#邮箱
-from flask_mail import Mail, Message
-
-
-@app.route('/speech_to_text', methods=['POST'])
-def speech_to_text():
-    import whisper
-    import tempfile
-    import base64
-    import io
-    # 解码音频数据
-    audio_data = request.json.get('audio')
-    audio_bytes = base64.b64decode(audio_data)
-    audio_file = io.BytesIO(audio_bytes)
-
-    # 临时保存音频文件（可选，根据whisper库的要求）
-    with tempfile.NamedTemporaryFile(delete=False) as tmp:
-        tmp.write(audio_bytes)
-        tmp_path = tmp.name
-
-    # 加载模型
-    model = whisper.load_model("C:\\Users\\fugubiao\\Desktop\\调用千问API\\small.pt")
-    # 进行语音识别
-    result = model.transcribe(tmp_path)
-    # 打印识别结果
-    print(result["text"])
-    print(type(result["text"]))
-    # 调用千问大模型
-    response = chat_with_model(result["text"])
-    # 返回识别的文本
-    return jsonify({"text":response})
-
-
-# 配置邮件服务器
-app.config['MAIL_SERVER'] = 'smtp.163.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'fugubiao@163.com'
-app.config['MAIL_PASSWORD'] = 'GTUPCHGWKVZITRUZ'  # 请确保使用正确的授权码
-
-mail = Mail(app)
-
-@app.route('/email',methods=['POST'])
-def email():
-    Name = request.form.get("Name")  # 邮件标题
-    Email = request.form.get("Email")  # 邮件地址
-    request_Message = request.form.get("Message")
-    print(Name, Email, request_Message)
-    with app.app_context():
-        msg = Message(Name, sender='fugubiao@163.com', recipients=[Email])
-        msg.body = request_Message #"邮件内容"
-        mail.send(msg)
-    return '检查您的电子邮件'
-'''
-
-
 
 @app.route("/tokentest", methods=['POST'])
 @jwt_required()
