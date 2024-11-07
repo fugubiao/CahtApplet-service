@@ -1,0 +1,8 @@
+transformers>=4.45.2,<4.38.0
+accelerate
+tiktoken
+einops
+transformers_stream_generator==0.0.4
+scipy
+regex!=2019.12.17
+FlashAttention #用于导入 flash_attn ，请安装 FlashAttention 以提高效率 https://github.com/Dao-AILab/flash-attention

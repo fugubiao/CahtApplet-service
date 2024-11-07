@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Qwen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Qwen/Qwen-1_8B-Chat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Qwen/Qwen-1_8B-Chat-12200" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Qwen/Qwen-1_8B-Chat-48700" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Qwen/checkpoint-48700" vcs="Git" />
+  </component>
+</project>
