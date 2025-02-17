@@ -3,7 +3,7 @@ import cx_Oracle
 
 class Users():
     def __init__(self):
-        self.conn = cx_Oracle.connect("FGB_STUDY/fgb@localhost/db11g01")
+        self.conn = cx_Oracle.connect("FGB_STUDY/fugubiao2025@localhost/db11g01")
         self.__cursor = self.conn.cursor()
     def __get_user(self,nickname):
         sql = 'SELECT * FROM applet_users'
